@@ -1,27 +1,29 @@
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import CreateUser from './Components/CreateUser';
 import Users from './Components/Users';
+import './App.css';
 
 function App() {
   return (
     <Router>
     <div className="App">
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a href="#!" className="navbar-brand">React Axing Routes</a>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to={"/create-user"}>Create User(Public)</Link>
+        <div className="nav">
+          <div >
+          <a href="#!" className="navbarBrand">React Axing Routes</a>
+          </div>
+          <div className="navbar">
+            <ul className="navbar-nav">
+              <li className="navItem active">
+                <Link className="navLink" to={"/create-user"}>Create User(Public)</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/users"}>Users(Private)</Link>
+              <li className="navItem">
+                <Link className="navLink" to={"/users"}>Users(Private)</Link>
               </li>
             </ul>
           </div>
-        </nav>
+        </div>
       </header>
 
       <div className="container">

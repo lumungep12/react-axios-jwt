@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../App.css';
 
 export default class CreateUser extends Component {
 
@@ -45,20 +46,22 @@ export default class CreateUser extends Component {
 
     render() {
         return (
-            <div className="wrapper">
-                <form onSubmit={this.onSubmit}>
+            <div className="formWrapper">
+                <p>Enter Your Details Below</p>
+                <form onSubmit={this.onSubmit} className="formless">
                     <div className="form-group">
-                        <label>Add User Name</label>
-                        <input type="text" value={this.state.name} onChange={this.onChangeUserName} className="form-control" />
+                        <input type="text" value={this.state.name} onChange={this.onChangeUserName} className="form-control" placeholder="Username" />
                     </div>
                     <div className="form-group">
-                        <label>Add User Email</label>
-                        <input type="text" value={this.state.email} onChange={this.onChangeUserEmail} className="form-control" />
+                        <input type="text" value={this.state.email} onChange={this.onChangeUserEmail} className="form-control" placeholder="Email" />
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Create User" className="btn btn-success btn-block" />
+                        <button type="submit"className="button"> Create User <i class="far fa-plus-square"></i></button>
                     </div>
                 </form>
+                <div className="copy">
+                <small>All rights Reserved LumugeDEVS &copy; 2020</small>
+                </div>
             </div>
         )
     }
