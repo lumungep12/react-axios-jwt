@@ -7,12 +7,14 @@ let database = require('./database/db');
 const userRoute = require('./routes/userRoutes');
 
 mongoose.Promise = global.Promise;
+
+
 mongoose.connect(database.db, {
     useNewUrlParser: true
 }).then(() => {
     console.log('The Base Of The Data Was Successfull!! ');
 }, error => {
-    console.log('Failure Is Price and Key!!' + error);
+    console.log('Failure To Connect To MongoDB' + error);
 })
 
 const app = express();

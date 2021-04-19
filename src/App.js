@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CreateUser from './Components/CreateUser';
 import Users from './Components/Users';
 import './App.css';
@@ -14,21 +15,17 @@ function App() {
           <a href="#!" className="navbarBrand">React Axing Routes</a>
           </div>
           <div className="navbar">
-            <ul className="navbar-nav">
-              <li className="navItem active">
-                <Link className="navLink" to={"/create-user"}>Create User(Public)</Link>
-              </li>
-              <li className="navItem">
-                <Link className="navLink" to={"/users"}>Users(Private)</Link>
-              </li>
-            </ul>
+              <div className="nav-item active">
+                <Link className="navLink" to={"/create-user"}>Create User</Link>
+              </div>
+              <div className="nav-item">
+                <Link className="navLink" to={"/users"}>All Users</Link>
+              </div>
           </div>
         </div>
       </header>
 
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
+        <div className="container">
             <Switch>
               <Route exact path="/" component={CreateUser} />
               <Route path="/create-user" component={CreateUser} />
@@ -36,8 +33,6 @@ function App() {
             </Switch>
           </div>
         </div>
-      </div>
-    </div>
     </Router>
   );
 }
